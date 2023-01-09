@@ -1,37 +1,54 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+// import './App.css';
+import { FC, useCallback, useState } from 'react';
+// import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
+import { EmojiSetHooked } from 'components/ecosystems/EmojiSetHooked';
 
-const title = import.meta.env.VITE_APP_TITLE;
-console.dir(import.meta.env);
+// const title = import.meta.env.VITE_APP_TITLE;
+// console.dir(import.meta.env);
 
-function App() {
-  const [count, setCount] = useState(0);
+const App: FC = () => {
+  // const [edata, setEdata] = useState<Emoji>();
+  // const [isShow, setIsShow] = useState(false);
+  // const targetUnicode =
+  //   edata?.unified != null ? `&#x${edata?.unified};` : '&#x231b;';
+  // const arrUnicode = Array(targetUnicode);
+  // const printEmoji = String.fromCodePoint(
+  //   parseInt(arrUnicode[0].replace(/&#x|;/g, ''), 16)
+  // );
+  // const switchEmojiList = useCallback(() => {
+  //   setIsShow((pre) => !pre);
+  // }, []);
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>{title}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  );
-}
+  // const onEmojiSelect = useCallback((data: Emoji) => {
+  //   // console.log(data);
+  //   // setUser({ ...user, name: user.name.concat(data.native) });
+  //   // openEmojiDrawer();
+  //   setEdata(data);
+  // }, []);
+
+  // console.log(edata?.unified);
+
+  return <EmojiSetHooked />;
+};
 
 export default App;
+
+// const emojiSamole = {
+//   id: 'stuck_out_tongue',
+//   name: 'Face with Tongue',
+//   native: '😛',
+//   unified: '1f61b',
+//   keywords: [
+//     'stuck',
+//     'out',
+//     'prank',
+//     'childish',
+//     'playful',
+//     'mischievous',
+//     'smile',
+//   ],
+//   shortcodes: ':stuck_out_tongue:',
+//   emoticons: [':p', ':-p', ':P', ':-P', ':b', ':-b'],
+// };
+// type Emoji = typeof emojiSamole;
